@@ -1,0 +1,187 @@
+███╗   ███╗ █████╗ ██╗██╗      █████╗  ██████╗ ██████╗███████╗███████╗███████╗
+████╗ ████║██╔══██╗██║██║     ██╔══██╗██╔════╝██╔════╝██╔════╝██╔════╝██╔════╝
+██╔████╔██║███████║██║██║     ███████║██║     ██║     █████╗  ███████╗███████╗
+██║╚██╔╝██║██╔══██║██║██║     ██╔══██║██║     ██║     ██╔══╝  ╚════██║╚════██║
+██║ ╚═╝ ██║██║  ██║██║███████╗██║  ██║╚██████╗╚██████╗███████╗███████║███████║
+╚═╝     ╚═╝╚═╝  ╚═╝╚═╝╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚═════╝╚══════╝╚══════╝╚══════╝
+
+Open-source OSINT email intelligence tool
+v0.12.0 · pypi.org/project/mailaccess
+━━━ Partnered with ScrapingAnt ━━━
+Web Scraping with Rotating Proxies
+↗ scrapingant.com
+No backend found at http://localhost:8000
+Starting embedded server...
+.Config loaded — CORS: 2 origins, 0 timeout overrides
+.
+Server started. Will stop when investigation completes.
+Backend: http://localhost:8000
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+🔍  saymonbb1996@gmail.com
+ID: 0cce0069 · Started: 22:55:58
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Connecting: ws://localhost:8000/ws/investigate/0cce0069-8723-4075-bbdb-c86aef3a300b
+         Module Progress
+ Module              Status  Time
+             Module Progress
+ Module                      Status  Time
+             Module Progress
+ Module                      Status  Time
+ email_credibility          SUCCESS  3.4s
+ account_discovery          PARTIAL  0.1s
+             Module Progress
+ Module                      Status  Time
+ email_credibility          SUCCESS  3.4s
+ account_discovery          PARTIAL  0.1s
+ blackbird_platforms        RUNNING   ...
+              Module Progress
+ Module                      Status    Time
+ email_credibility          SUCCESS    3.4s
+ account_discovery          PARTIAL    0.1s
+ blackbird_platforms        PARTIAL   29.9s
+ breach_deep                SKIPPED    0.1s
+ breachdirectory            SKIPPED    0.1s
+ code_and_cert_email        PARTIAL   29.9s
+ commoncrawl_email          PARTIAL   29.9s
+ companies_house            SKIPPED    0.1s
+ dns_lookup                 SUCCESS    0.3s
+ domain_harvester           SKIPPED    0.1s
+ domain_intel               SKIPPED    0.1s
+ email_identity_enrichment  SKIPPED    0.1s
+ email_search_dork          PARTIAL    0.4s
+ employee_name_discovery    SUCCESS   24.0s
+ fediverse_discovery        PARTIAL   30.0s
+ ghunt                      SKIPPED    0.1s
+ github_code_search         PARTIAL    4.3s
+ github_commits             SUCCESS   33.2s
+ github_org_members         SKIPPED    1.3s
+ google_dork                SKIPPED    0.0s
+ google_search              SUCCESS    0.0s
+ gravatar                   SUCCESS    5.4s
+ gravatar_lookup            PARTIAL    4.2s
+ hackernews                 PARTIAL    6.4s
+ hibp                       SKIPPED    0.0s
+ hudson_rock                SUCCESS    3.0s
+ hunter_io                  SKIPPED    0.0s
+ intelx_lookup              SKIPPED    0.0s
+ keybase                    SUCCESS    3.1s
+ leakcheck                  SUCCESS    2.7s
+ maigret_platforms          PARTIAL   61.8s
+ messaging_hints            PARTIAL    2.0s
+ name_to_github_profile     SKIPPED    0.0s
+ nexfil_platforms           PARTIAL   30.0s
+ npm_discovery              SUCCESS   14.7s
+ npm_email                  PARTIAL   20.3s
+ opencorporates             SKIPPED    0.0s
+ orcid_lookup               SUCCESS    6.8s
+ pastebin_search            PARTIAL    8.4s
+ pattern_and_verify         SUCCESS    0.0s
+ person_email_pivot         SKIPPED    0.0s
+ pgp_domain_email            FAILED   12.0s
+ pgp_keyserver              PARTIAL   19.6s
+ pypi_discovery             SUCCESS   10.0s
+ pypi_email                 PARTIAL   20.0s
+ ransomware_intel           SKIPPED    0.0s
+ sec_edgar                  SKIPPED    0.0s
+ security_txt               PARTIAL    0.0s
+ sherlock_platforms          FAILED  103.2s
+ shodan                     SKIPPED    0.0s
+ social                      FAILED   14.9s
+ social_links               SUCCESS    0.0s
+ syndication_feed_sweeper   SKIPPED    0.0s
+ user_scanner               PARTIAL   14.5s
+ wayback                    PARTIAL   20.0s
+ wayback_domain_harvest     SUCCESS   20.0s
+ whatsmyname                 FAILED   57.2s
+ whois_lookup               SKIPPED    0.0s
+ wordpress_rest             PARTIAL   10.0s
+ xposedornot                PARTIAL   30.0s
+ username_pivot             SUCCESS   92.1s
+ permutation_discovery      SKIPPED    0.0s
+ alternate_email            SUCCESS    0.0s
+ domain_cluster             SUCCESS    1.2s
+ twitter_profile            SKIPPED    0.0s
+ linkedin_serp              SKIPPED    0.0s
+ marketplace_profile        SKIPPED    0.0s
+ phone_intel                SKIPPED    0.0s
+
+Investigation Complete
+
+✓ gmail.com — established provider
+
+╭─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│  Exposure: 43/100 (43/68 modules)  |  Cred Risk: 8 LOW  |  gmail.com  |  Coverage: MEDIUM  |  Breaches: 0 | Pastes: │
+│ 0 | Stealer: 0  | First seen: - | Active risk: NO                                                                   │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+25 modules skipped — set API keys to improve coverage. Run: mailaccess keys list
+
+────────────────────────────────────────────────── DEFENDER'S BRIEF ───────────────────────────────────────────────────
+  Risk:      LOW
+  Summary:   LOW - Confirmed accounts on: Facebook, Instagram, Office365, Skyscanner, X (Twitter)
+
+  1. Active accounts on sensitive platforms   [MEDIUM]
+     Confirmed accounts on: Facebook, Instagram, Office365, Skyscanner, X (Twitter)
+     -> Verify MFA is active on each. Ensure recovery email/phone are not exposed.
+
+  Next action: No immediate action required - log for periodic review.
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+──────────────────────────────────────────────────── Full Results ─────────────────────────────────────────────────────
+──────────────────────────────────────────────── DNS LOOKUP  (5 hits) ─────────────────────────────────────────────────
+  ✓ dns_a                A: 142.250.120.83
+  ✓ dns_dmarc            DMARC: none
+  ✓ dns_mx               MX: Google Workspace
+  ✓ dns_ns               NS: ns2.google.com
+  ✓ dns_spf              SPF: v=spf1 redirect=_spf.google.com
+
+───────────────────────────────────────────── EMAIL CREDIBILITY  (1 hits) ─────────────────────────────────────────────
+  ✓ email_credibility    info
+
+
+─────────────────────────────────────────────── SOCIAL LINKS  (1 hits) ────────────────────────────────────────────────
+  ~ social_links         → saymonbb1996
+
+
+─────────────────────────────────────────────── USER SCANNER  (5 hits) ────────────────────────────────────────────────
+  ✓ Facebook
+  ✓ Instagram
+  ✓ Office365
+  ✓ Skyscanner
+  ✓ X (Twitter)
+
+─────────────────────────────────────────────────── BREACH SOURCES ────────────────────────────────────────────────────
+  — BREACH DEEP: skipped (Set ENABLE_BREACH_DEEP=true or run with --modul...)
+  — BREACHDIRECTORY: skipped (BREACHDIRECTORY_API_KEY not set)
+  — HIBP: skipped (HIBP_API_KEY not set)
+  — RANSOMWARE INTEL: skipped (free provider)
+
+──────────────────────────────────────────────────── RECON MODULES ────────────────────────────────────────────────────
+  — DOMAIN INTEL: skipped (free provider)
+  — GOOGLE DORK: skipped (SERPAPI_KEY not set)
+  — HUNTER IO: skipped (HUNTER_IO_API_KEY not set)
+  — SHODAN: skipped (SHODAN_API_KEY not set)
+  — WHOIS LOOKUP: skipped (free email provider)
+
+────────────────────────────────────────────────── OPTIONAL MODULES ───────────────────────────────────────────────────
+  — GHUNT: skipped (Set ENABLE_GHUNT=true to run this module)
+  — PERMUTATION DISCOVERY: skipped (No real name found in primary module results)
+  — PHONE INTEL: skipped (No phone numbers found in primary findings)
+
+──────────────────────────────────────────────────── OTHER MODULES ────────────────────────────────────────────────────
+  — COMPANIES HOUSE: skipped (free provider)
+  — DOMAIN HARVESTER: skipped (see docs)
+  — EMAIL IDENTITY ENRICHMENT: skipped (see docs)
+  — GITHUB ORG MEMBERS: skipped (see docs)
+  — INTELX LOOKUP: skipped (missing api key)
+  — LINKEDIN SERP: skipped (LinkedIn search requires confirmed name from ot...)
+  — MARKETPLACE PROFILE: skipped (No confirmed Etsy or eBay account found)
+  — NAME TO GITHUB PROFILE: skipped (see docs)
+  — OPENCORPORATES: skipped (OpenCorporates: free email provider, skipping)
+  — PERSON EMAIL PIVOT: skipped (see docs)
+  — SEC EDGAR: skipped (free provider)
+  — SYNDICATION FEED SWEEPER: skipped (syndication_feed_sweeper disabled â€” set ENABL...)
+  — TWITTER PROFILE: skipped (No confirmed Twitter/X username found)
+
+Legend: ✓ confirmed  ~ low confidence  — skipped
+💾 Save report: mailaccess investigate saymonbb1996@gmail.com -o report.pdf
+~ >    

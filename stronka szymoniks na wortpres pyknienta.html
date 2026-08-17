@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KidsPLANET — Odkryj Magiczny Świat</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --bg-gradient: linear-gradient(135deg, #a8edd8 0%, #fed6e3 100%);
+      --card-bg: rgba(255, 255, 255, 0.88);
+      --primary: #ff6b81;
+      --primary-hover: #ff4757;
+      --secondary: #70a1ff;
+      --accent: #eccc68;
+      --text-dark: #2f3542;
+      --text-muted: #747d8c;
+      --radius: 24px;
+      --shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg-gradient);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    .background-shapes {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .shape {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(50px);
+      opacity: 0.6;
+      animation: float 10s infinite ease-in-out alternate;
+    }
+
+    .shape-1 {
+      width: 300px;
+      height: 300px;
+      background: #ff7aa8;
+      top: -50px;
+      left: -50px;
+    }
+
+    .shape-2 {
+      width: 250px;
+      height: 250px;
+      background: #70a1ff;
+      bottom: -50px;
+      right: -50px;
+      animation-delay: -5s;
+    }
+
+    @keyframes float {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(30px, 40px) scale(1.1); }
+    }
+
+    .card {
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      width: 100%;
+      max-width: 440px;
+      padding: 40px 32px;
+      text-align: center;
+      position: relative;
+    }
+
+    .logo {
+      font-family: 'Fredoka', cursive;
+      font-size: 2.4rem;
+      color: var(--primary);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .logo i {
+      color: var(--accent);
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+    }
+
+    .subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+      line-height: 1.5;
+    }
+
+    .step {
+      display: none;
+      animation: fadeIn 0.4s ease forwards;
+    }
+
+    .step.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .input-group {
+      position: relative;
+      margin-bottom: 24px;
+      text-align: left;
+    }
+
+    .input-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--text-dark);
+      margin-left: 4px;
+    }
+
+    .input-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-wrapper i {
+      position: absolute;
+      left: 16px;
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+
+    .input-wrapper input {
+      width: 100%;
+      padding: 16px 16px 16px 48px;
+      border: 2px solid rgba(0, 0, 0, 0.06);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.9);
+      font-size: 1rem;
+      font-family: inherit;
+      font-weight: 600;
+      color: var(--text-dark);
+      outline: none;
+      transition: all 0.25s ease;
+    }
+
+    .input-wrapper input:focus {
+      border-color: var(--primary);
+      background: #fff;
+      box-shadow: 0 0 0 4px rgba(255, 107, 129, 0.15);
+    }
+
+    .btn {
+      width: 100%;
+      padding: 16px;
+      border: none;
+      border-radius: 16px;
+      background: var(--primary);
+      color: white;
+      font-family: 'Fredoka', cursive;
+      font-size: 1.1rem;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: 0 8px 20px rgba(255, 107, 129, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .btn:hover {
+      background: var(--primary-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(255, 107, 129, 0.4);
+    }
+
+    .btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .otp-container {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+
+    .otp-input {
+      width: 52px;
+      height: 60px;
+      border: 2px solid rgba(0, 0, 0, 0.06);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.9);
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      font-family: 'Fredoka', cursive;
+      color: var(--primary);
+      outline: none;
+      transition: all 0.25s ease;
+    }
+
+    .otp-input:focus {
+      border-color: var(--secondary);
+      box-shadow: 0 0 0 4px rgba(112, 161, 255, 0.2);
+      background: #fff;
+    }
+
+    .success-icon {
+      font-size: 4rem;
+      color: #2ed573;
+      margin-bottom: 16px;
+      animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    @keyframes popIn {
+      0% { transform: scale(0); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="background-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+  </div>
+
+  <div class="card">
+    <div class="logo">
+      <i class="fa-solid fa-planet"></i> KidsPLANET
+    </div>
+
+    <!-- KROK 1: Wpisanie telefonu -->
+    <div id="step-1" class="step active">
+      <p class="subtitle">Wpisz swój numer telefonu, aby odebrać kod dostępu SMS.</p>
+      
+      <form id="phone-form">
+        <div class="input-group">
+          <label for="phone">Numer telefonu</label>
+          <div class="input-wrapper">
+            <i class="fa-solid fa-phone"></i>
+            <input type="tel" id="phone" placeholder="np. 500 600 700" required>
+          </div>
+        </div>
+
+        <button type="submit" id="submit-btn" class="btn">
+          <span>Wyślij kod SMS</span>
+          <i class="fa-solid fa-paper-plane"></i>
+        </button>
+      </form>
+    </div>
+
+    <!-- KROK 2: Wpisanie kodu SMS -->
+    <div id="step-2" class="step">
+      <p class="subtitle">Wysłaliśmy kod weryfikacyjny na numer:<br><strong id="display-phone" style="color: var(--text-dark);"></strong></p>
+
+      <form id="otp-form">
+        <div class="otp-container">
+          <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" required>
+          <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" required>
+          <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" required>
+          <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" required>
+        </div>
+
+        <button type="submit" class="btn" style="background: var(--secondary);">
+          <span>Zatwierdź kod</span>
+          <i class="fa-solid fa-check"></i>
+        </button>
+      </form>
+    </div>
+
+    <!-- KROK 3: Sukces -->
+    <div id="step-3" class="step">
+      <div class="success-icon">
+        <i class="fa-solid fa-circle-check"></i>
+      </div>
+      <h2 style="font-family: 'Fredoka', cursive; margin-bottom: 8px;">Zweryfikowano!</h2>
+      <p class="subtitle">Witaj w KidsPLANET. Konto zostało aktywowane.</p>
+    </div>
+  </div>
+
+  <script>
+    const step1 = document.getElementById('step-1');
+    const step2 = document.getElementById('step-2');
+    const step3 = document.getElementById('step-3');
+    
+    const phoneForm = document.getElementById('phone-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const phoneInput = document.getElementById('phone');
+    const displayPhone = document.getElementById('display-phone');
+    const otpForm = document.getElementById('otp-form');
+    const otpInputs = document.querySelectorAll('.otp-input');
+
+    // Obsługa wysyłki telefonu
+    phoneForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const phone = phoneInput.value.trim();
+
+      if (!phone) return;
+
+      submitBtn.disabled = true;
+      submitBtn.innerText = 'Wysyłanie...';
+
+      try {
+        const response = await fetch('/api/send-number', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ phone })
+        });
+
+        if (response.ok) {
+          displayPhone.textContent = phone;
+          step1.classList.remove('active');
+          step2.classList.add('active');
+          otpInputs[0].focus();
+        } else {
+          alert('Wystąpił błąd. Spróbuj ponownie.');
+        }
+      } catch (err) {
+        alert('Błąd połączenia z serwerem.');
+      } finally {
+        submitBtn.disabled = false;
+      }
+    });
+
+    // Przeskakiwanie pól OTP
+    otpInputs.forEach((input, index) => {
+      input.addEventListener('input', (e) => {
+        if (e.target.value.length === 1 && index < otpInputs.length - 1) {
+          otpInputs[index + 1].focus();
+        }
+      });
+
+      input.addEventListener('keydown', (e) => {
+        if (e.key === 'Backspace' && !e.target.value && index > 0) {
+          otpInputs[index - 1].focus();
+        }
+      });
+    });
+
+    otpForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      step2.classList.remove('active');
+      step3.classList.add('active');
+    });
+  </script>
+</body>
+</html>
